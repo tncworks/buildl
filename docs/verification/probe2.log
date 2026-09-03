@@ -1,0 +1,33 @@
+SOMNIA_TESTNET_PRICE_FEED: {"url":"https://price-feed.dev.oracle.somnia.host/v1/graphql","quote":"USDC"}
+resolution full: {"events":[{"id":"478781051_67","market":"0x0000000000000000000000000000000000000000000000000000000000012563","kind":"Resolved","winningOutcome":0,"payoutNumerators":["10000000","0"],"payoutDenominator":"10000000","voided":false,"blockNumber":"478781051","timestamp":"1788451202","txHash":"0x70f7f6fb5a6d7558f7a69aff0620d8d3c6729b3d328d2fd9377b00970ba1b1e8"}],"reference":{"id":"0x0000000000000000000000000000000000000000000000000000000000012563","market":"0x0000000000000000000000000000000000000000000000000000000000012563","oracleQuestionId":"49979","pending":false},"closingAnswer":{"oracleQuestionId":"49916","numericValue":"251678","outcomeLabel":">= 0.00","voidReason":0,"resolvedAt":"1788451202","txHash":"0x0039cd9920e637ef60308e68cba850370508e3a2b306d79a820bdf924acd3c4d"},"openingAnswer":{"oracleQuestionId":"49979","numericValue":"248937","outcomeLabel":">= 0.00","voidReason":0,"resolvedAt":"1788447602","txHash":"0xb57f79be375deacab1fadd75a3f30b4ba0eb50b724a5adee66d8cc5bfae832bc"},"oracleAnswer":{"oracleQuestionId":"49916","numericValue":"251678","outcomeLabel":">= 0.00","voidReason":0,"resolvedAt":"1788451202","txHash":"0x0039cd9920e637ef60308e68cba850370508e3a2b306d79a820bdf924acd3c4d"}}
+status history: [{"oldStatus":"Locked","newStatus":"Resolved","blockNumber":"478781051","timestamp":"1788451202","txHash":"0x70f7f6fb5a6d7558f7a69aff0620d8d3c6729b3d328d2fd9377b00970ba1b1e8"}]
+BTC/300s recent: [
+  '01279b trades=3 strike=0 venue=0x679795a0 q=BTC closes at or above its opening price',
+  "012797 trades=1 strike=8133785 venue=0x1a1e6821 q=Pricefeed test: will BTC/USDC's price be at or above 81337.85 at unix time 1788459300?",
+  "012789 trades=3 strike=8117664 venue=0x1a1e6821 q=Pricefeed test: will BTC/USDC's price be at or above 81176.64 at unix time 1788459000?",
+  '01278d trades=3 strike=0 venue=0x679795a0 q=BTC closes at or above its opening price',
+  '01277f trades=1 strike=0 venue=0x679795a0 q=BTC closes at or above its opening price'
+]
+opening prices: {"0x000000000000000000000000000000000000000000000000000000000001277f":"8106171","0x000000000000000000000000000000000000000000000000000000000001278d":"8118574","0x000000000000000000000000000000000000000000000000000000000001279b":"8133428"}
+300s closingAnswer: {"oracleQuestionId":"50090","numericValue":"8128770","outcomeLabel":">= 0.00","voidReason":0,"resolvedAt":"1788459301","txHash":"0x1295aa57fce18b896b59a6f1b958bf7533c57bc16cb69635032381b86c9ceda7"} openingAnswer: {"oracleQuestionId":"50095","numericValue":"8133428","outcomeLabel":">= 0.00","voidReason":0,"resolvedAt":"1788459001","txHash":"0x5895e8d117f93b02e617afcba1f130c674561548cbab68066cc172433556667a"} oracleAnswer: {"oracleQuestionId":"50090","numericValue":"8128770","outcomeLabel":">= 0.00","voidReason":0,"resolvedAt":"1788459301","txHash":"0x1295aa57fce18b896b59a6f1b958bf7533c57bc16cb69635032381b86c9ceda7"}
+exchange.fetchPrice: function
+exchange.watchPrice: function
+exchange.fetchPriceCandles: undefined
+exchange.fetchPriceHistory: undefined
+fetchPrice(BTC): {"symbol":"BTC","price":81276.315,"ema":81284.17096410603,"timestamp":1788459318000,"datetime":"2026-09-03T18:15:18.000Z","info":{"asset":"BTC","price":81276.315,"ema":81284.17096410603,"blockNumber":478862202,"blockTimestamp":1788459318,"decimals":18,"raw":{"price":"81276315000000000000000","ema":"81284170964106027701446"}}}
+GET https://price-feed.dev.oracle.somnia.host/v1/graphql -> 200 {"errors":[{"message":"PersistedQueryNotSupported","extensions":{"path":"$","code":"not-supported"}}]}
+GET https://price-feed.dev.oracle.somnia.host/v1/graphql/candles?symbol=BTC&resolution=60 -> 404 {"error":"resource does not exist","path":"$","code":"not-found"}
+GET https://price-feed.dev.oracle.somnia.host/v1/graphql/history?symbol=BTC -> 404 {"error":"resource does not exist","path":"$","code":"not-found"}
+GET https://price-feed.dev.oracle.somnia.host/v1/graphql/prices -> 404 {"error":"resource does not exist","path":"$","code":"not-found"}
+GET https://price-feed.dev.oracle.somnia.host/v1/graphql/BTC -> 404 {"error":"resource does not exist","path":"$","code":"not-found"}
+live BTC/300s: 0x00000000000000000000000000000000000000000000000000000000000127ab venue 0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c pool 0x4775eb5d6de9463b81834d8f333db8cc6865274f
+onchain open orders: bids {"orders":[{"orderId":"73786976294838431950","isBid":true,"owner":"0xc8ef8f747587EbDc2a62612D19b738E400d74432","userData":"0","price":"420000","fullQuantity":"200000000","quantityRemaining":"200000000","expireTimestampNs":"1788459350000000000"},{"orderId":"18446744073709777104","isBid":true,"owner":"0xc8ef8f747587EbDc2a62612D19b738E400d74432","userData":"1","price":"410000","fullQuantity":"3300000 
+asks {"orders":[{"orderId":"239807672958224396495","isBid":false,"owner":"0xc8ef8f747587EbDc2a62612D19b738E400d74432","userData":"0","price":"450000","fullQuantity":"200000000","quantityRemaining":"200000000","expireTimestampNs":"1788459350000000000"},{"orderId":"36893488147419328721","isBid":false,"owner":"0xc8ef8f747587EbDc2a62612D19b738E400d74432","userData":"1","price":"460000","fullQuantity":"3300
+client.getBinaryOrderBook: function
+client.getLiveBinaryOrderBook: function
+client.watchMarket: function
+client.getOrders: function
+client.getUserOrders: undefined
+client.listOrders: undefined
+client.getOrderHistory: undefined
+fetchOrderBook(marketId) failed: @somnia-chain/markets-sdk: unknown market ref 0x00000000000000000000000000000000000000000000000000000000000127ab — call loadMarkets() first

@@ -1,0 +1,37 @@
+
+> @calibrate/data@0.1.0 sync
+> tsx src/sync.ts --days 5 --assets BTC,ETH --intervals 300,900,3600
+
+18:49:29 network=testnet venue=0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c assets=BTC,ETH intervals=300,900,3600 days=5 db=./data/calibrate.sqlite
+18:49:30 markets BTC/300s offset=0 got=200 seen=200 new=0
+18:49:32 markets BTC/300s offset=200 got=200 seen=400 new=119
+18:49:34 markets BTC/300s offset=400 got=200 seen=600 new=319
+18:49:35 markets BTC/300s offset=600 got=200 seen=800 new=519
+18:49:36 markets BTC/300s offset=800 got=200 seen=1000 new=719
+18:49:38 markets BTC/300s offset=1000 got=200 seen=1200 new=919
+18:49:39 markets BTC/300s offset=1200 got=200 seen=1400 new=1119
+18:49:40 markets BTC/300s offset=1400 got=200 seen=1406 new=1125
+18:49:41 markets BTC/900s offset=0 got=200 seen=1606 new=1325
+18:49:43 markets BTC/900s offset=200 got=200 seen=1806 new=1525
+18:49:45 markets BTC/900s offset=400 got=200 seen=1881 new=1600
+18:49:45 markets BTC/3600s offset=0 got=200 seen=2001 new=1720
+18:49:47 markets ETH/300s offset=0 got=200 seen=2201 new=1920
+18:49:47 markets ETH/300s offset=200 got=200 seen=2401 new=2120
+18:49:48 markets ETH/300s offset=400 got=200 seen=2601 new=2320
+18:49:48 markets ETH/300s offset=600 got=200 seen=2801 new=2520
+18:49:50 markets ETH/300s offset=800 got=200 seen=3001 new=2720
+18:49:51 markets ETH/300s offset=1000 got=200 seen=3201 new=2920
+18:49:51 markets ETH/300s offset=1200 got=200 seen=3349 new=3068
+18:49:52 markets ETH/900s offset=0 got=200 seen=3549 new=3268
+18:49:52 markets ETH/900s offset=200 got=200 seen=3749 new=3468
+18:49:53 markets ETH/900s offset=400 got=200 seen=3805 new=3524
+18:49:53 markets ETH/3600s offset=0 got=200 seen=3920 new=3639
+18:49:53 detail sync for 3639 markets (concurrency 4)
+18:51:39 detail 100/3639
+18:52:39 detail 200/3639
+18:53:24 detail 300/3639
+18:54:01 detail 400/3639
+18:55:05 detail 500/3639
+18:56:03 detail 600/3639
+18:57:15 detail 700/3639
+18:58:05 detail 800/3639

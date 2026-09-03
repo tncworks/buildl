@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Light palette (default). Cool neutrals with a steel-blue accent; Up is teal-green, Down is rust. */
+:root {
+  --ground: #f5f7f8;
+  --surface: #ffffff;
+  --ink: #1b2430;
+  --muted: #64707d;
+  --line: #d9dfe5;
+  --accent: #2b4c7e;
+  --accent-soft: #e3eaf5;
+  --up: #0b8a6e;
+  --up-soft: #dcf3ec;
+  --down: #c2410c;
+  --down-soft: #fbe6da;
+  --warn-bg: #fff4e0;
+  --warn-ink: #7a4a00;
+  --grid: #e6ebef;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #12171d;
+    --surface: #1a2129;
+    --ink: #e7ebef;
+    --muted: #97a3b0;
+    --line: #2c3641;
+    --accent: #8fb0e6;
+    --accent-soft: #223247;
+    --up: #34c9a5;
+    --up-soft: #163a32;
+    --down: #f0824a;
+    --down-soft: #3f2317;
+    --warn-bg: #3a2c12;
+    --warn-ink: #f3cf8b;
+    --grid: #242d37;
+  }
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-up: var(--up);
+  --color-up-soft: var(--up-soft);
+  --color-down: var(--down);
+  --color-down-soft: var(--down-soft);
+  --color-warn-bg: var(--warn-bg);
+  --color-warn-ink: var(--warn-ink);
+  --color-grid: var(--grid);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, Menlo, monospace;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+}

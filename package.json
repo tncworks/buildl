@@ -1,0 +1,29 @@
+{
+  "name": "calibrate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "sync": "tsx services/data/src/sync.ts",
+    "backtest": "tsx services/backtest/src/cli.ts",
+    "web": "npm run dev -w @calibrate/web",
+    "stats": "tsx services/data/src/stats.ts",
+    "spotcheck": "tsx services/data/src/spotcheck.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0",
+    "vitest": "^3.2.7"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}

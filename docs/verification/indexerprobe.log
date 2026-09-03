@@ -1,0 +1,62 @@
+chains exports: [
+  'BridgeToken',      'ChainId',
+  'SOMNIA_BRIDGE',    'createBridgeTransfer',
+  'defineChain',      'getBridgeNetwork',
+  'getBridgeRoute',   'getBridgeRouter',
+  'getBridgeToken',   'getSomniaChain',
+  'hidekiTestnet',    'isBridgeNetwork',
+  'isSomniaChainId',  'listBridgeNetworks',
+  'listBridgeTokens', 'sendBridgeStep',
+  'somniaChains',     'somniaElwood',
+  'somniaLocal',      'somniaMainnet',
+  'somniaShannon',    'toEip1193Transaction',
+  'warpRouterAbi'
+]
+
+=========== testnet
+venues: [{"operatorId":1,"venueId":"0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f"},{"operatorId":2,"venueId":"0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c"},{"operatorId":3,"venueId":"0xcbc4e5fb02c3d1de23a9f1e014b4d2ee5aeaea9505df5e855c9210bf472495af"},{"operatorId":4,"venueId":"0x1a1e6821cde7d0159c0d293177871e09677b4e42307c7db3ba94f8648a5a050f"},{"operatorId":5,"venueId":"0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d"},{"operatorId":6,"venueId":"0x697b2bd7bb2984c4e0dc14c79c987d37818484a62958b9c45a0e8b962f20650f"},{"operatorId":8,"venueId":"0xe4c2e8be66af8dd2d277000f4f830a10546f8b14e45cd850b875c98ba0f0d2cd"},{"operatorId":9,"venueId":"0x87e8a52529e8ece4ef759037313542a6429ff494a9fab9027fb79db90124eba6"},{"operatorId":10,"venueId":"0x3e57c57b03145299956be61386751c5b285d460d484d5c2403a6be086d9d6baa"},{"operatorId":11,"venueId":"0xe8056e2ed8943b7f61a5f0dc88c79a5a6cec2bb36a7bd11ce130f2961c6320b9"},{"operatorId":12,"venueId":"0x37877ab6ac9e279d19a4db3294b259b5a4163c0ed597627ae79e33d80cde4db8"},{"operatorId":13,"venueId":"0xe0af3347aa7e5af384208c9d29458f902f0ceddbc90963608afa77235658b360"},{"operatorId":14,"venueId":"0xa6897c210c76a29b3d6bf757063b10a3faa77fe0657de0ee282493e99a18ed50"}]
+assets: ["BTC","DECEDO","ETH","SOL","SOMI"]
+count BTC: live=7 past=10000 pastFinalized=10000
+count DECEDO: live=0 past=7 pastFinalized=7
+count ETH: live=7 past=10000 pastFinalized=10000
+count SOL: live=0 past=20 pastFinalized=19
+listPastBinaryMarkets Finalized: 400 rows
+by asset/interval (n, withTrades, totalTrades): {"ETH/60s":{"n":135,"traded":10,"trades":20},"BTC/60s":{"n":135,"traded":11,"trades":16},"ETH/300s":{"n":50,"traded":47,"trades":204},"BTC/300s":{"n":52,"traded":49,"trades":206},"DECEDO/745s":{"n":1,"traded":1,"trades":1},"ETH/298s":{"n":3,"traded":3,"trades":17},"ETH/900s":{"n":7,"traded":7,"trades":91},"BTC/900s":{"n":8,"traded":8,"trades":97},"ETH/3600s":{"n":3,"traded":3,"trades":134},"BTC/3600s":{"n":2,"traded":2,"trades":89},"ETH/898s":{"n":1,"traded":1,"trades":7},"BTC/298s":{"n":1,"traded":1,"trades":5},"ETH/14400s":{"n":1,"traded":1,"trades":22},"BTC/14400s":{"n":1,"traded":1,"trades":17}}
+sample row: {"id":"0x0000000000000000000000000000000000000000000000000000000000012563","marketId":"0x0000000000000000000000000000000000000000000000000000000000012563","poolAddress":"0x171186a2a8d237ad194dd3cae9b05326407c4e11","asset":"ETH","intervalSec":"3600","strike":"0","tradingStart":"1788447600","expiry":"1788451200","status":"Finalized","winningOutcome":0,"voided":false,"finalized":true,"tradeCount":"62","cumulativeQuoteVolume":"177001468","cumulativeBaseVolume":"289338000","lastPrice":"980000","quoteDecimals":6,"baseDecimals":6,"venueId":"0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c","operatorId":2,"nonce":"207","oracleQuestionId":"49916","payoutNumerators":["10000000","0"]}
+candles(60s) in window: 42; first={"bucketStart":"1788447660","openPrice":"520000","high":"520000","low":"520000","closePrice":"520000","baseVolume":"5000000","quoteVolume":"2600000","tradeCount":1}
+fills in window: 62; first={"id":"478776815_11","market":"0x0000000000000000000000000000000000000000000000000000000000012563","pool":"0x171186a2a8d237ad194dd3cae9b05326407c4e11","fillPrice":"980000","quantity":"4000000","quoteQuantity":"3920000","maker":"0x94e5a4481bd57f06e959d6d892eed804283135e0","makerSide":"BUY_YES","taker":"0xe11825b13c96ccbe49cff978932375ce13daaeb4","takerSide":"SELL_YES","kind":"DIRECT_YES","takerIsBid":false,"timestamp":"1788450778","txHash":"0x896414579882ad1566004dc6ed9609d5d73a6d103b09969c643c8ba91c9cffd1","takerOrder":{"owner":"0xe11825b13c96ccbe49cff978932375ce13daaeb4","side":"SELL_YES"}}
+fills market ids match: true
+getMarketResolution: {"events":[{"id":"478781051_67","market":"0x0000000000000000000000000000000000000000000000000000000000012563","kind":"Resolved","winningOutcome":0,"payoutNumerators":["10000000","0"],"payoutDenominator":"10000000","voided":false,"blockNumber":"478781051","timestamp":"1788451202","txHash":"0x70f7f6fb5a6d7558f7a69aff0620d8d3c6729b3d328d2fd9377b00970ba1b1e8"}],"reference":{"id":"0x0000000000000000000000000000000000000000000000000000000000012563","market":"0x0000000000000000000000000000000000000000000000000000000000012563","oracleQuestionId":"49979","pending":false},"closingAnswer":{"oracleQuestio
+getOpeningPrices: {"0x0000000000000000000000000000000000000000000000000000000000012563":"248937"}
+getBinaryBookParams: {"tickSize":"1000","minQuantity":"1000","lotSize":"1000"}
+getMarketOnchain: {"marketAddress":"0x5FC5639D8F9E110F2501D4305712e8Acc3355Ac1","outcomeToken":"0xB52c5934113Af5c0Bb20eb3C72290C8215f755b9","yesId":"621924468089171227089702634586089074817974228857101632321785692212992","noId":"621924468089171227089702634586089074817974228857101632321785692212993","pool":"0x171186a2A8D237aD194Dd3CAe9b05326407c4E11","nonce":"207","collateral":"0x70a86D8842FB63C4Ad2b7cdddF530eBf1BB25d8E","status":4,"backing":"22910000","finalized":true,"expiry":"1788451200","decimals":6,"winningOutcome":0,"isResolved":true,"isVoided":false}
+live markets: 10 [
+  'BTC/900s status=Trading exp=1788459300 venue=0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c',
+  'ETH/900s status=Trading exp=1788459300 venue=0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c',
+  'BTC/300s status=Trading exp=1788459300 venue=0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c',
+  'ETH/300s status=Trading exp=1788459300 venue=0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c',
+  'BTC/300s status=Trading exp=1788459300 venue=0x1a1e6821cde7d0159c0d293177871e09677b4e42307c7db3ba94f8648a5a050f'
+]
+
+=========== mainnet
+venues: [{"operatorId":1,"venueId":"0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f"},{"operatorId":2,"venueId":"0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c"},{"operatorId":3,"venueId":"0xcbc4e5fb02c3d1de23a9f1e014b4d2ee5aeaea9505df5e855c9210bf472495af"},{"operatorId":5,"venueId":"0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d"}]
+assets: ["BTC","ETH"]
+count BTC: live=3 past=5764 pastFinalized=5761
+count ETH: live=3 past=4936 pastFinalized=4932
+listPastBinaryMarkets Finalized: 400 rows
+by asset/interval (n, withTrades, totalTrades): {"ETH/300s":{"n":129,"traded":18,"trades":18},"BTC/300s":{"n":141,"traded":21,"trades":35},"ETH/298s":{"n":12,"traded":1,"trades":1},"ETH/900s":{"n":47,"traded":11,"trades":12},"BTC/900s":{"n":47,"traded":22,"trades":50},"BTC/3600s":{"n":12,"traded":3,"trades":10},"ETH/3600s":{"n":12,"traded":1,"trades":1}}
+sample row: {"id":"0x0000000000000000000000000000000000000000000000000000000000002853","marketId":"0x0000000000000000000000000000000000000000000000000000000000002853","poolAddress":"0xa475e7cff65bd47c3a0783d071e7075e035048a8","asset":"BTC","intervalSec":"3600","strike":"0","tradingStart":"1788418800","expiry":"1788422400","status":"Finalized","winningOutcome":1,"voided":false,"finalized":true,"tradeCount":"6","cumulativeQuoteVolume":"632494812000000000000","cumulativeBaseVolume":"1228812000000000000000","lastPrice":"155000000000000000","quoteDecimals":18,"baseDecimals":18,"venueId":"0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d","operatorId":5,"nonce":"393","oracleQuestionId":"50808","payoutNumerators":["0","10000000"]}
+candles(60s) in window: 3; first={"bucketStart":"1788419040","openPrice":"858000000000000000","high":"858000000000000000","low":"847000000000000000","closePrice":"847000000000000000","baseVolume":"614406000000000000000","quoteVolume":"523261882000000000000","tradeCount":3}
+fills in window: 6; first={"id":"402693534_21","market":"0x0000000000000000000000000000000000000000000000000000000000002853","pool":"0xa475e7cff65bd47c3a0783d071e7075e035048a8","fillPrice":"155000000000000000","quantity":"214406000000000000000","quoteQuantity":"33232930000000000000","maker":"0xb7f85e2a0bfbc63fd47ff382375ddaf0ed3d1790","makerSide":"SELL_YES","taker":"0xb9468e21498a8a36ea1d29d043b5bf3e50021e87","takerSide":"SELL_NO","kind":"BURN_A_PAIR","takerIsBid":true,"timestamp":"1788421812","txHash":"0xb945f8212976229c2d20d9f83822d16de32a3ed302b19049ab38a089b5eb0773","takerOrder":{"owner":"0xb9468e21498a8a36ea1d29d043b5bf3e50021e87","side":"SELL_NO"}}
+fills market ids match: true
+getMarketResolution: {"events":[{"id":"402699431_16","market":"0x0000000000000000000000000000000000000000000000000000000000002853","kind":"Resolved","winningOutcome":1,"payoutNumerators":["0","10000000"],"payoutDenominator":"10000000","voided":false,"blockNumber":"402699431","timestamp":"1788422402","txHash":"0x33843a627c7c0d6982db749a602598d6b3dc57ee3322d08c55fa2569a8f944b1"}],"reference":{"id":"0x0000000000000000000000000000000000000000000000000000000000002853","market":"0x0000000000000000000000000000000000000000000000000000000000002853","oracleQuestionId":"50766","pending":false},"closingAnswer":{"oracleQuestio
+getOpeningPrices: {"0x0000000000000000000000000000000000000000000000000000000000002853":"7780335"}
+getBinaryBookParams: {"tickSize":"1000000000000000","minQuantity":"1000000000000000","lotSize":"1000000000000000"}
+getMarketOnchain: {"marketAddress":"0x3A6d97a1784001dEFc601Fc740e0670492A21139","outcomeToken":"0xB52c5934113Af5c0Bb20eb3C72290C8215f755b9","yesId":"4433848153608705270886227018163907722438847347956629059039239040239872","noId":"4433848153608705270886227018163907722438847347956629059039239040239873","pool":"0xA475e7cfF65bd47c3A0783d071E7075E035048A8","nonce":"393","collateral":"0x00000022dA000002656c64D9eA6011ea952D008A","status":4,"backing":"0","finalized":true,"expiry":"1788422400","decimals":18,"winningOutcome":1,"isResolved":true,"isVoided":false}
+live markets: 6 [
+  'BTC/300s status=Trading exp=1788459600 venue=0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d',
+  'ETH/300s status=Trading exp=1788459600 venue=0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d',
+  'BTC/900s status=Trading exp=1788460200 venue=0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d',
+  'ETH/900s status=Trading exp=1788460200 venue=0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d',
+  'BTC/3600s status=Trading exp=1788462000 venue=0x458b30c2d72bfd2c6317304a4594ecbafe5f729d3111b65fdc3a33bd48e5432d'
+]

@@ -1,0 +1,12 @@
+
+### indexer root query fields (132): BuilderApproval BuilderFeeRecord Candle ClobMarketLink ClobPoolLink Fill FundingParametersEpoch FundingPayment FundingRateCandle FundingRateUpdate GasSponsorship LendAction LendLiquidation LendRateUpdate LiquidationEvent MarginEvent Market MarketCreator MarketCreatorPolicy MarketEarmark MarketReferenceLink MarketResolutionEvent MarketStatusUpdate MarketVenue ModuleBinding OpenInterestSnapshot Operator OperatorApproval OperatorHubAccount OperatorOwnershipEvent OracleAdapter OracleAnswer OracleBind OracleBindByMarket OracleCallback OracleQuestion Order OutcomeBalance OutcomeTokenLink PayerHubAccount PaymasterAccount PendingRedeemAttribution PendingRouterAttribution PendingTakerFill PerpFeeRecord PerpFundingState PerpInsuranceFundEvent PerpMainFundingEvent PerpMarginPull PerpOrderRejection PerpPosition PerpWalletLinkEvent Pool PoolBinding ProtocolFeeRecord RedemptionRecord RouterActionRecord Series SettlementFeeRecord SettlementMarketLink StopOrder TokenApproval VaultPayoutFallback Venue _meta chain_metadata raw_events
+
+### pricefeed root query fields (13): Candle Feed PricePoint Symbol _meta chain_metadata raw_events
+
+### indexer Order fields: amendedFromOrderId:numeric amendedToOrderId:numeric cancelReason:String expireTimestampNs:numeric filledQuantity:numeric fullQuantity:numeric id:String isBid:Boolean lastUpdatedAtBlock:numeric lastUpdatedAtTimestamp:numeric market:Market market_id:String orderId:String orderIdRaw:numeric owner:String placedAtBlock:numeric placedAtTimestamp:numeric placedTxHash:String price:numeric quantityRemaining:numeric rested:Boolean side:cloborderside status:orderstatus userData:numeric
+
+### Order by pool (no owner): {"errors":[{"message":"field 'pool' not found in type: 'Order_bool_exp'","extensions":{"path":"$.selectionSet.Order.args.where.pool","code":"validation-failed"}}]}
+
+### OrderStatusUpdate fields: {"data":{"__type":null}}
+
+### pricefeed type Candle: base:String bucketStart:numeric close:numeric count:Int feed:Feed feed_id:String high:numeric id:String lastBlock:numeric low:numeric markClose:numeric open:numeric quote:String resolution:candleresolution symbol:String

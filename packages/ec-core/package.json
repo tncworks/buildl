@@ -1,0 +1,21 @@
+{
+  "name": "@calibrate/ec-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Vendored from https://github.com/somnia-chain/dreamdex-bot-kit packages/ec-core (MIT, DreamDEX S.A.). Source unchanged.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@somnia-chain/markets-sdk": "0.28.1",
+    "dotenv": "^16.4.5",
+    "viem": "^2.21.0"
+  }
+}
