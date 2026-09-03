@@ -1,7 +1,7 @@
 import { DatabaseSync } from "node:sqlite";
 import { mkdirSync } from "node:fs";
 import { dirname, isAbsolute, resolve } from "node:path";
-import { envDir, loadEnv } from "./client.js";
+import { envDir, loadEnv } from "./client";
 
 export const SCHEMA = `
 CREATE TABLE IF NOT EXISTS markets (
@@ -142,6 +142,8 @@ export function openDb(path = dbPath()): Db {
   const db = new DatabaseSync(path);
   db.exec("PRAGMA journal_mode = WAL");
   db.exec("PRAGMA synchronous = NORMAL");
+  // Sync, runners and the web app share the file; wait instead of failing with SQLITE_BUSY.
+  db.exec("PRAGMA busy_timeout = 5000");
   db.exec(SCHEMA);
   return db;
 }

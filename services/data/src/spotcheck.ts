@@ -6,9 +6,9 @@
  *   npm run spotcheck -w @calibrate/data          # picks the most-traded stored window
  */
 import { feedRawToNumber, oracleRawToNumber, priceRawToProb } from "@calibrate/shared";
-import { networkFromEnv, readOnlyExchange } from "./client.js";
-import { openDb } from "./db.js";
-import { getFills, getMarket, spotAt } from "./queries.js";
+import { networkFromEnv, readOnlyExchange } from "./client";
+import { openDb } from "./db";
+import { getFills, getMarket, spotAt } from "./queries";
 
 const db = openDb();
 const network = networkFromEnv();

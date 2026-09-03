@@ -1,5 +1,5 @@
 import { moveBps, oracleRawToNumber, feedRawToNumber, priceRawToProb } from "@calibrate/shared";
-import type { Db } from "./db.js";
+import type { Db } from "./db";
 
 export const T_SECS = [30, 60, 120] as const;
 export const N_BINS = 20;

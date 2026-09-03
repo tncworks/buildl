@@ -4,3 +4,4 @@ data/*.sqlite*
 .next/
 dist/
 *.log.tmp
+apps/web/tsconfig.tsbuildinfo

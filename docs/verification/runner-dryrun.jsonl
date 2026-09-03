@@ -1,0 +1,6 @@
+{"t":1788462748364,"type":"bookParams","pool":"0x3604c66cdd41649f26a804df2c6cbd2f2753cb68","tickSize":"1000","lotSize":"1000","minQuantity":"1000"}
+{"t":1788462748366,"type":"start","network":"testnet","venueId":"0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c","address":null,"dryRun":true,"spec":{"asset":"BTC","intervalSec":300,"template":"momentum","params":{"move_bps":0,"seconds_left":90,"max_price":0.9,"size":5,"slippage_ticks":2,"stale_sec":60},"tickMs":3000},"tickMs":3000}
+{"t":1788462818881,"type":"decision","marketId":"0x000000000000000000000000000000000000000000000000000000000001284d","secondsLeft":89,"side":"DOWN","skipped":"no-fresh-print","printAge":1697,"reason":"spot 81255.595 is -3.5bps vs open 81283.67"}
+{"t":1788463048797,"type":"warn","where":"snapshot","marketId":"0x000000000000000000000000000000000000000000000000000000000001285d","message":"database is locked"}
+{"t":1788463115210,"type":"stopping","signal":"SIGTERM"}
+{"t":1788463115211,"type":"stop"}

@@ -1,0 +1,75 @@
+
+> calibrate@0.1.0 spotcheck
+> tsx services/data/src/spotcheck.ts
+
+== stored market
+{
+  marketId: '0x0000000000000000000000000000000000000000000000000000000000012563',
+  network: 'testnet',
+  venueId: '0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c',
+  operatorId: 2,
+  asset: 'ETH',
+  intervalSec: 3600,
+  poolAddress: '0x171186a2a8d237ad194dd3cae9b05326407c4e11',
+  nonce: '207',
+  tradingStart: 1788447600,
+  expiry: 1788451200,
+  status: 'Finalized',
+  winningOutcome: 0,
+  voided: 0,
+  finalized: 1,
+  tradeCount: 62,
+  quoteVolumeRaw: '177001468',
+  baseVolumeRaw: '289338000',
+  quoteDecimals: 6,
+  baseDecimals: 6,
+  strikeRaw: '0',
+  openingAnswerRaw: '248937',
+  closingAnswerRaw: '251678',
+  resolvedAt: 1788451202,
+  question: 'ETH closes at or above its opening price',
+  detailSynced: 1,
+  syncedAt: 1788463419
+}
+== stored fills: 62
+  1788447663 0.520 x 5 DIRECT_YES BUY_YES
+  1788447738 0.620 x 6 MINT_A_PAIR BUY_NO
+  1788447739 0.626 x 6 MINT_A_PAIR BUY_NO
+  1788447762 0.685 x 5 DIRECT_YES SELL_YES
+  1788447786 0.602 x 5 DIRECT_YES SELL_YES
+  … 57 more
+== stored features [Object: null prototype] {
+  marketId: '0x0000000000000000000000000000000000000000000000000000000000012563',
+  nTrades: 62,
+  firstTradeProb: 0.52,
+  vwapProb: 0.6117463589296946,
+  lastTradeProbAtT30: 0.984,
+  lastTradeProbAtT60: 0.984,
+  lastTradeProbAtT120: 0.984,
+  lastTradeAgeAtT30: 392,
+  lastTradeAgeAtT60: 362,
+  lastTradeAgeAtT120: 302,
+  openRef: 2489.37,
+  closeRef: 2516.78,
+  spotAtT30: 2517.155,
+  spotAtT60: 2516.165,
+  spotAtT120: 2513.035,
+  moveBpsAtT30: 111.61458521634111,
+  moveBpsAtT60: 107.63767539578316,
+  moveBpsAtT120: 95.06421303381967
+}
+  spot at expiry-120s: 2513.035 (tick ts 1788451080)
+  spot at expiry-60s: 2516.165 (tick ts 1788451140)
+  spot at expiry-30s: 2517.155 (tick ts 1788451170)
+  openRef=2489.37 closeRef=2516.78 winner=UP voided=0
+  consistency: close>=open → UP; indexer winner → UP MATCH
+== fresh from indexer
+{
+  status: 'Finalized',
+  winningOutcome: 0,
+  tradeCount: '62',
+  expiry: '1788451200',
+  voided: false
+}
+fresh fills for this market: 62 (stored 62) MATCH
+{ opening: '248937', closing: '251678', event: 0 }

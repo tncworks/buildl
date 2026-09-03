@@ -1,0 +1,27 @@
+
+> calibrate@0.1.0 sync
+> tsx services/data/src/sync.ts --days 1
+
+19:23:39 network=testnet venue=0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c assets=BTC,ETH intervals=300,900,3600 days=1 db=./data/calibrate.sqlite
+19:23:41 markets BTC/300s offset=0 got=200 seen=200 new=7
+19:23:43 markets BTC/300s offset=200 got=200 seen=281 new=7
+19:23:43 markets BTC/900s offset=0 got=200 seen=376 new=9
+19:23:45 markets BTC/3600s offset=0 got=200 seen=400 new=10
+19:23:46 markets ETH/300s offset=0 got=200 seen=600 new=17
+19:23:48 markets ETH/300s offset=200 got=200 seen=669 new=17
+19:23:50 markets ETH/900s offset=0 got=200 seen=760 new=19
+19:23:50 markets ETH/3600s offset=0 got=200 seen=783 new=20
+19:23:50 detail sync for 20 markets (concurrency 4)
+19:24:20 detail done 20
+19:24:20 opening prices: 0 missing
+19:24:20 price ticks BTC/USDC from=1788461105 to=1788463205 (0.6h)
+19:24:22 price ticks BTC/USDC: 1998 rows
+19:24:22 price ticks ETH/USDC from=1788461105 to=1788463205 (0.6h)
+19:24:22 price ticks ETH/USDC: 1998 rows
+19:24:23 features for 3940 markets; calibration cells 354
+19:24:23 totals [Object: null prototype] {
+  markets: 3940,
+  fills: 4854,
+  orders: 1207697,
+  ticks: 487595
+}

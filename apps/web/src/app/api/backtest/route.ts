@@ -26,6 +26,7 @@ export async function POST(req: Request) {
     intervalSec: Number(body.intervalSec ?? 300),
     template,
     params,
+    fillModel: body.fillModel === "book" ? "book" : "print",
     from: body.from,
     to: body.to,
   });

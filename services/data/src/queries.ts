@@ -1,7 +1,7 @@
 /** Read API over the SQLite DB, used by services/backtest and apps/web. */
 import type { CalibrationBin, FillRecord, MarketRecord, SeriesKey } from "@calibrate/shared";
-import { N_BINS } from "./features.js";
-import type { Db } from "./db.js";
+import { N_BINS } from "./features";
+import type { Db } from "./db";
 
 export interface SeriesSummary extends SeriesKey {
   windows: number;

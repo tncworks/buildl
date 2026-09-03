@@ -1,4 +1,4 @@
-import type { SkipReason, Summary, WindowResult } from "./types.js";
+import type { SkipReason, Summary, WindowResult } from "./types";
 
 /** Wilson score interval for a binomial proportion, 95%. */
 export function wilson95(wins: number, n: number): [number, number] {

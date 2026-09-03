@@ -1,0 +1,17 @@
+01283f 1788462597 snapshot bid/ask=5000/15000 reconstructed=5000/15000 resting=5
+01285d 1788462904 snapshot bid/ask=null/null reconstructed=null/null resting=0
+01285d 1788462907 snapshot bid/ask=null/null reconstructed=null/null resting=0
+01285d 1788462912 snapshot bid/ask=431000/461000 reconstructed=431000/461000 resting=6
+01285d 1788462915 snapshot bid/ask=431000/461000 reconstructed=431000/461000 resting=6
+01285d 1788462918 snapshot bid/ask=482000/511000 reconstructed=482000/511000 resting=6
+01285d 1788462922 snapshot bid/ask=437000/466000 reconstructed=437000/466000 resting=6
+01285d 1788462925 snapshot bid/ask=427000/456000 reconstructed=427000/456000 resting=6
+01285d 1788462928 snapshot bid/ask=427000/456000 reconstructed=427000/456000 resting=6
+01285d 1788462931 snapshot bid/ask=427000/456000 reconstructed=427000/456000 resting=6
+01285d 1788462934 snapshot bid/ask=409000/439000 reconstructed=409000/439000 resting=6
+01285d 1788462937 snapshot bid/ask=409000/439000 reconstructed=409000/439000 resting=6
+01285d 1788462940 snapshot bid/ask=424000/454000 reconstructed=409000/439000 resting=6
+01285d 1788462943 snapshot bid/ask=407000/436000 reconstructed=424000/454000 resting=6
+01285d 1788462945 snapshot bid/ask=365000/394000 reconstructed=390000/419000 resting=6
+
+126 snapshots compared: best bid exact 97 (77%), within 1 tick 97; best ask exact 99 (79%), within 1 tick 99

@@ -1,0 +1,37 @@
+
+> calibrate@0.1.0 sync
+> tsx services/data/src/sync.ts --days 5 --assets BTC --intervals 300,900,3600 --skip-orders
+
+19:26:58 network=testnet venue=0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c assets=BTC intervals=300,900,3600 days=5 db=./data/calibrate.sqlite
+19:27:00 markets BTC/300s offset=0 got=200 seen=200 new=1
+19:27:01 markets BTC/300s offset=200 got=200 seen=400 new=1
+19:27:03 markets BTC/300s offset=400 got=200 seen=600 new=1
+19:27:05 markets BTC/300s offset=600 got=200 seen=800 new=1
+19:27:06 markets BTC/300s offset=800 got=200 seen=1000 new=1
+19:27:08 markets BTC/300s offset=1000 got=200 seen=1200 new=1
+19:27:10 markets BTC/300s offset=1200 got=200 seen=1400 new=1
+19:27:10 markets BTC/300s offset=1400 got=200 seen=1406 new=1
+19:27:11 markets BTC/900s offset=0 got=200 seen=1606 new=1
+19:27:12 markets BTC/900s offset=200 got=200 seen=1806 new=1
+19:27:14 markets BTC/900s offset=400 got=200 seen=1881 new=1
+19:27:16 markets BTC/3600s offset=0 got=200 seen=2001 new=1
+19:27:16 detail sync for 1 markets (concurrency 4)
+19:27:20 detail done 1
+19:27:20 opening prices: 0 missing
+19:27:20 price ticks BTC/USDC from=1788029940 to=1788374640 (95.8h)
+19:27:46   BTC/USDC pages=50 lastTs=1788081329
+19:28:09   BTC/USDC pages=100 lastTs=1788133117
+19:28:31   BTC/USDC pages=150 lastTs=1788184899
+19:28:54   BTC/USDC pages=200 lastTs=1788236590
+19:29:16   BTC/USDC pages=250 lastTs=1788288598
+19:29:39   BTC/USDC pages=300 lastTs=1788340479
+19:29:54 price ticks BTC/USDC: 332822 rows
+19:29:54 price ticks BTC/USDC from=1788463205 to=1788463505 (0.1h)
+19:29:55 price ticks BTC/USDC: 295 rows
+19:29:55 features for 3941 markets; calibration cells 354
+19:29:55 totals [Object: null prototype] {
+  markets: 3941,
+  fills: 4855,
+  orders: 1207697,
+  ticks: 808051
+}

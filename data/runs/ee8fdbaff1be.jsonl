@@ -1,0 +1,5 @@
+{"t":1788463677097,"type":"bookParams","pool":"0xdb751846c49934ae35ea0cbacae6bca940317491","tickSize":"1000","lotSize":"1000","minQuantity":"1000"}
+{"t":1788463677100,"type":"start","network":"testnet","venueId":"0x679795a0195a1b76cdebb7c51d74e058aee92919b8c3389af86ef24535e8a28c","address":null,"dryRun":true,"spec":{"asset":"BTC","intervalSec":300,"template":"momentum","params":{"move_bps":3,"seconds_left":60,"max_price":0.9,"size":5,"slippage_ticks":2,"stale_sec":60}},"tickMs":3000}
+{"t":1788463686235,"type":"stopping","signal":"SIGTERM"}
+{"t":1788463686236,"type":"stop"}
+{"t":1788463686249,"type":"exit","code":0}

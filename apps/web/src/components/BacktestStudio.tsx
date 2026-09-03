@@ -19,6 +19,7 @@ export function BacktestStudio({ series, initial }: { series: Series[]; initial:
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showSkipped, setShowSkipped] = useState(false);
+  const [fillModel, setFillModel] = useState<"print" | "book">("print");
   const spec = TEMPLATES[template];
   const reqId = useRef(0);
 
@@ -27,7 +28,7 @@ export function BacktestStudio({ series, initial }: { series: Series[]; initial:
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/backtest", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ asset, intervalSec, template, params }) });
+      const res = await fetch("/api/backtest", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ asset, intervalSec, template, params, fillModel }) });
       const json = await res.json();
       if (id !== reqId.current) return;
       if (!res.ok) throw new Error(json.error ?? res.statusText);
@@ -37,7 +38,7 @@ export function BacktestStudio({ series, initial }: { series: Series[]; initial:
     } finally {
       if (id === reqId.current) setBusy(false);
     }
-  }, [asset, intervalSec, template, params]);
+  }, [asset, intervalSec, template, params, fillModel]);
 
   // Debounced auto-run on any change.
   useEffect(() => {
@@ -102,7 +103,16 @@ export function BacktestStudio({ series, initial }: { series: Series[]; initial:
       </div>
 
       <div className="flex flex-col gap-4">
-        <Note><strong>Fill model.</strong> {spec.fillAssumption}</Note>
+        <Note>
+          <strong>Fill model.</strong> {fillModel === "book" ? "Taker fill estimated from the best quote reconstructed from indexer order history at the decision time, plus slippage. Approximate: partial fills before the decision time are not visible in order rows." : spec.fillAssumption}
+          {template !== "ladder" ? (
+            <span className="ml-2 inline-flex gap-1">
+              {(["print", "book"] as const).map((m) => (
+                <button key={m} onClick={() => setFillModel(m)} className={`rounded-md border px-2 py-0.5 font-mono text-xs ${m === fillModel ? "border-warn-ink bg-surface" : "border-transparent opacity-70"}`}>{m === "print" ? "last print" : "reconstructed book"}</button>
+              ))}
+            </span>
+          ) : null}
+        </Note>
         {error ? <Note>Backtest failed: {error}</Note> : null}
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           <Stat label="Trades" value={s ? s.trades : "–"} sub={s ? `${s.eligible} eligible windows` : undefined} />

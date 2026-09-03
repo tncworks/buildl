@@ -9,10 +9,10 @@
 import { parseArgs } from "node:util";
 import type { BinaryMarket } from "@somnia-chain/markets-sdk";
 import { feedSymbol } from "@calibrate/shared";
-import { endpoints, networkFromEnv, readOnlyExchange } from "./client.js";
-import { openDb, setMeta, transaction, type Db } from "./db.js";
-import { fetchOrdersByMarket, streamPricePoints } from "./gql.js";
-import { computeCalibration, computeFeatures } from "./features.js";
+import { endpoints, networkFromEnv, readOnlyExchange } from "./client";
+import { openDb, setMeta, transaction, type Db } from "./db";
+import { fetchOrdersByMarket, streamPricePoints } from "./gql";
+import { computeCalibration, computeFeatures } from "./features";
 
 const { values: args } = parseArgs({
   options: {
@@ -188,20 +188,28 @@ async function main() {
           .get(network, venueId, asset, floorExpiry) as { lo: number | null; hi: number | null };
         if (range.lo === null || range.hi === null) continue;
         const symbol = feedSymbol(asset, ep.priceFeedQuote);
-        const have = db.prepare("SELECT MAX(ts) AS mx FROM price_points WHERE symbol = ?").get(symbol) as { mx: number | null };
-        const from = Math.max(range.lo - 60, have.mx ?? 0);
-        const to = range.hi + 5;
-        log(`price ticks ${symbol} from=${from} to=${to} (${((to - from) / 3600).toFixed(1)}h)`);
+        const have = db.prepare("SELECT MIN(ts) AS mn, MAX(ts) AS mx FROM price_points WHERE symbol = ?").get(symbol) as { mn: number | null; mx: number | null };
+        const want = { from: range.lo - 60, to: range.hi + 5 };
+        // Two sub-ranges: backfill before the oldest stored tick, and extend after the newest.
+        const spans: [number, number][] = [];
+        if (have.mn === null) spans.push([want.from, want.to]);
+        else {
+          if (want.from < have.mn - 1) spans.push([want.from, have.mn - 1]);
+          if (want.to > (have.mx ?? 0)) spans.push([have.mx!, want.to]);
+        }
         const ins = db.prepare("INSERT OR IGNORE INTO price_points (symbol, ts, spotRaw, markRaw) VALUES (?,?,?,?)");
-        let pages = 0;
-        const total = await streamPricePoints(ep.priceFeedUrl, symbol, from, to, (rows) => {
-          transaction(db, () => {
-            for (const r of rows) ins.run(symbol, Number(r.blockTimestamp), r.spot, r.mark);
+        for (const [from, to] of spans) {
+          log(`price ticks ${symbol} from=${from} to=${to} (${((to - from) / 3600).toFixed(1)}h)`);
+          let pages = 0;
+          const total = await streamPricePoints(ep.priceFeedUrl, symbol, from, to, (rows) => {
+            transaction(db, () => {
+              for (const r of rows) ins.run(symbol, Number(r.blockTimestamp), r.spot, r.mark);
+            });
+            pages++;
+            if (pages % 50 === 0) log(`  ${symbol} pages=${pages} lastTs=${rows[rows.length - 1]!.blockTimestamp}`);
           });
-          pages++;
-          if (pages % 50 === 0) log(`  ${symbol} pages=${pages} lastTs=${rows[rows.length - 1]!.blockTimestamp}`);
-        });
-        log(`price ticks ${symbol}: ${total} rows`);
+          log(`price ticks ${symbol}: ${total} rows`);
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 /** Print DB totals, per-series coverage, and the calibration table for one series. */
-import { openDb } from "./db.js";
-import { getCalibration, listSeries } from "./queries.js";
-import { networkFromEnv } from "./client.js";
+import { openDb } from "./db";
+import { getCalibration, listSeries } from "./queries";
+import { networkFromEnv } from "./client";
 
 const db = openDb();
 const network = networkFromEnv();

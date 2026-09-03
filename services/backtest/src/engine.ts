@@ -4,10 +4,10 @@
  * the payout comes from the recorded outcome.
  */
 import { NETWORKS, feedRawToNumber, priceRawToProb, type Network } from "@calibrate/shared";
-import { binOf, N_BINS, getFills, listWindows, spotAt, type Db, type WindowRow } from "@calibrate/data";
-import { summarize } from "./metrics.js";
-import { TEMPLATES, decideMispricing, decideMomentum, isDecision, ladderRungs } from "./templates.js";
-import type { Decision, DecisionContext, RunRequest, RunResult, Side, WindowResult } from "./types.js";
+import { binOf, N_BINS, getFills, listWindows, reconstructBook, spotAt, type Db, type WindowRow } from "@calibrate/data";
+import { summarize } from "./metrics";
+import { TEMPLATES, decideMispricing, decideMomentum, isDecision, ladderRungs } from "./templates";
+import type { Decision, DecisionContext, RunRequest, RunResult, Side, WindowResult } from "./types";
 
 interface Print {
   ts: number;
@@ -112,7 +112,20 @@ export function runBacktest(db: Db, req: RunRequest): RunResult {
       addToCalibration();
       continue;
     }
-    const sidePrint = d.side === "UP" ? lastPrint.prob : 1 - lastPrint.prob;
+    let sidePrint = d.side === "UP" ? lastPrint.prob : 1 - lastPrint.prob;
+    if (req.fillModel === "book") {
+      // Buying UP crosses the YES ask; buying DOWN crosses the YES bid (a SELL_NO / BUY_YES resting order) at 1 - bid.
+      const book = reconstructBook(db, w.marketId, t, 1);
+      const one = 10 ** w.quoteDecimals;
+      const quote = d.side === "UP" ? book.yesAsks[0] : book.yesBids[0];
+      if (!quote) {
+        results.push({ ...base, decisionAt: t, side: d.side, reason: d.reason, printProb: lastPrint.prob, printAge: age, skipped: "no-book" });
+        addToCalibration();
+        continue;
+      }
+      const yesPx = Number(quote.priceRaw) / one;
+      sidePrint = d.side === "UP" ? yesPx : 1 - yesPx;
+    }
     const price = Number((sidePrint + params.slippage_ticks! * tick).toFixed(6));
     if (price > d.limitPrice || price >= 1) {
       results.push({ ...base, decisionAt: t, side: d.side, reason: d.reason, printProb: lastPrint.prob, printAge: age, price, skipped: "price-cap" });

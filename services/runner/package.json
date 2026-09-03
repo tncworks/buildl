@@ -1,0 +1,19 @@
+{
+  "name": "@calibrate/runner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/runner.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "tsx src/runner.ts"
+  },
+  "dependencies": {
+    "@calibrate/backtest": "*",
+    "@calibrate/data": "*",
+    "@calibrate/ec-core": "*",
+    "@calibrate/shared": "*",
+    "@somnia-chain/markets-sdk": "0.28.1",
+    "viem": "^2.21.0"
+  }
+}

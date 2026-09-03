@@ -3,8 +3,8 @@
  */
 import { parseArgs } from "node:util";
 import { openDb, networkFromEnv, endpoints } from "@calibrate/data";
-import { runBacktest } from "./engine.js";
-import type { TemplateId } from "./types.js";
+import { runBacktest } from "./engine";
+import type { TemplateId } from "./types";
 
 const { values: a } = parseArgs({
   options: {
@@ -16,6 +16,7 @@ const { values: a } = parseArgs({
     from: { type: "string" },
     to: { type: "string" },
     rows: { type: "string", default: "0" },
+    fill: { type: "string", default: "print" },
     json: { type: "boolean", default: false },
   },
 });
@@ -26,7 +27,7 @@ const db = openDb();
 const t0 = performance.now();
 const out = runBacktest(db, {
   network, venueId, asset: a.asset!.toUpperCase(), intervalSec: Number(a.interval), template: a.template as TemplateId,
-  params: JSON.parse(a.params!), from: a.from ? Number(a.from) : undefined, to: a.to ? Number(a.to) : undefined,
+  params: JSON.parse(a.params!), fillModel: a.fill === "book" ? "book" : "print", from: a.from ? Number(a.from) : undefined, to: a.to ? Number(a.to) : undefined,
 });
 const ms = performance.now() - t0;
 

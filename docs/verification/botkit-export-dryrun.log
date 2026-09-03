@@ -1,0 +1,11 @@
+
+> ec-oracle-follow@0.1.0 start
+> tsx src/index.ts
+
+2026-09-03T19:20:13.065Z oracle-follow up as (no key, dry run) · dryRun=true · model=strike interval=8000ms window=60000ms edge=0.03 maxDisagreement=0.1 maxHorizons=30 (30min)
+2026-09-03T19:20:20.917Z warming up spot history for BTC
+2026-09-03T19:20:22.530Z warming up spot history for ETH
+2026-09-03T19:21:03.848Z idle · 8 tradable · flat · warming up ×8
+2026-09-03T19:21:27.273Z DRY BUY_NO 5 BTC-0-03SEP26-1930/tUSDC#NO @ ~0.036 (opening 81215.81 vs spot 81497.71, vol 0.150% assumed, r +0.0009, tilt -0.074 off market 0.024, pUp 0.902, fair 0.098, ask 0.034)
+2026-09-03T19:21:33.250Z DRY BUY_NO 5 ETH-0-03SEP26-2000-282E/tUSDC#NO @ ~0.346 (opening 2513.02 vs spot 2518.45, vol 0.150% assumed, r muted, tilt -0.079 off market 0.330, pUp 0.591, fair 0.409, ask 0.344)
+2026-09-03T19:21:33.251Z oracle-follow stopped

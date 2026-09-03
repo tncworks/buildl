@@ -1,22 +1,41 @@
 
 > @calibrate/web@0.1.0 dev
-> next dev --port 3000
+> next dev --port 3210
 
-⨯ Failed to start server
-Error: listen EADDRINUSE: address already in use :::3000
-    at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
-    at new Promise (<anonymous>) {
-  code: 'EADDRINUSE',
-  errno: -98,
-  syscall: 'listen',
-  address: '::',
-  port: 3000
-}
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3210
+- Network:       http://14.139.56.28:3210
+✓ Ready in 190ms
+✓ Running next.config.ts took 19ms
+
+ GET /api/calibration?series=1 200 in 310ms (next.js: 123ms, application-code: 187ms)
+ GET /api/calibration?series=1 200 in 8ms (next.js: 3ms, application-code: 5ms)
+ GET / 200 in 227ms (next.js: 42ms, application-code: 185ms)
+ GET /backtest 200 in 48ms (next.js: 11ms, application-code: 38ms)
+ POST /api/backtest 200 in 58ms (next.js: 19ms, application-code: 39ms)
+ GET / 200 in 96ms (next.js: 5ms, application-code: 92ms)
+ GET /?asset=BTC&interval=300&t=30 200 in 96ms (next.js: 1.9ms, application-code: 95ms)
+ GET /backtest?asset=BTC&interval=300&template=mispricing&seconds_left=60 200 in 28ms (next.js: 1.9ms, application-code: 26ms)
+ GET /backtest?template=momentum 200 in 20ms (next.js: 1.3ms, application-code: 19ms)
+ GET /deploy 200 in 48ms (next.js: 10ms, application-code: 38ms)
+ GET /export 200 in 32ms (next.js: 9ms, application-code: 23ms)
+ POST /api/backtest 200 in 40ms (next.js: 1.4ms, application-code: 39ms)
+ POST /api/backtest 200 in 45ms (next.js: 1.1ms, application-code: 44ms)
+ POST /api/runners 200 in 39ms (next.js: 21ms, application-code: 18ms)
+ GET /live/4079426533e9 200 in 470ms (next.js: 407ms, application-code: 63ms)
+ DELETE /api/runners/4079426533e9 200 in 540ms (next.js: 535ms, application-code: 5ms)
+ GET / 200 in 83ms (next.js: 1.5ms, application-code: 82ms)
+ GET /?asset=BTC&interval=300&t=30 200 in 77ms (next.js: 2ms, application-code: 75ms)
+ GET /backtest?asset=BTC&interval=300&template=mispricing&seconds_left=60 200 in 20ms (next.js: 1.4ms, application-code: 19ms)
+ GET /backtest?template=momentum 200 in 25ms (next.js: 1.7ms, application-code: 24ms)
+ GET /deploy 200 in 30ms (next.js: 2ms, application-code: 28ms)
+ GET /export 200 in 20ms (next.js: 1.4ms, application-code: 18ms)
+ POST /api/backtest 200 in 50ms (next.js: 2ms, application-code: 48ms)
+ POST /api/backtest 200 in 50ms (next.js: 1.0ms, application-code: 49ms)
+ POST /api/runners 200 in 22ms (next.js: 1.0ms, application-code: 21ms)
+ GET /live/ee8fdbaff1be 200 in 87ms (next.js: 20ms, application-code: 68ms)
+ DELETE /api/runners/ee8fdbaff1be 200 in 23ms (next.js: 21ms, application-code: 3ms)
+ GET /api/runners 200 in 5ms (next.js: 2ms, application-code: 3ms)
+ GET /backtest 200 in 27ms (next.js: 1.7ms, application-code: 25ms)
+ POST /api/backtest 200 in 42ms (next.js: 1.1ms, application-code: 41ms)
 [?25h
-npm error Lifecycle script `dev` failed with error:
-npm error code 1
-npm error path /home/serv-admin/Documents/projects/hacks/build/apps/web
-npm error workspace @calibrate/web@0.1.0
-npm error location /home/serv-admin/Documents/projects/hacks/build/apps/web
-npm error command failed
-npm error command sh -c next dev --port 3000

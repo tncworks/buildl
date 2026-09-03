@@ -1,0 +1,9 @@
+
+> ec-oracle-follow@0.1.0 start
+> tsx src/index.ts
+
+2026-09-03T19:24:30.312Z oracle-follow up as (no key, dry run) · dryRun=true · model=momentum interval=8000ms window=60000ms edge=0.03 maxDisagreement=0.1 maxHorizons=30 (30min)
+2026-09-03T19:24:39.564Z warming up spot history for BTC
+2026-09-03T19:25:01.218Z idle · 4 tradable · flat · near expiry ×1, warming up ×3
+2026-09-03T19:25:37.557Z idle · 4 tradable · flat · warming up ×4
+2026-09-03T19:25:45.068Z oracle-follow stopped

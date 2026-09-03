@@ -35,3 +35,52 @@
 18:56:03 detail 600/3639
 18:57:15 detail 700/3639
 18:58:05 detail 800/3639
+18:59:06 detail 900/3639
+19:00:21 detail 1000/3639
+19:01:17 detail 1100/3639
+19:02:18 detail 1200/3639
+19:03:10 detail 1300/3639
+19:04:06 detail 1400/3639
+19:05:09 detail 1500/3639
+19:06:02 detail 1600/3639
+19:06:45 detail 1700/3639
+19:07:28 detail 1800/3639
+19:08:02 detail 1900/3639
+19:08:34 detail 2000/3639
+19:09:08 detail 2100/3639
+19:09:59 detail 2200/3639
+19:10:48 detail 2300/3639
+19:11:26 detail 2400/3639
+19:12:03 detail 2500/3639
+19:12:44 detail 2600/3639
+19:13:28 detail 2700/3639
+19:14:10 detail 2800/3639
+19:14:38 detail 2900/3639
+19:15:13 detail 3000/3639
+19:15:52 detail 3100/3639
+19:16:31 detail 3200/3639
+19:17:04 detail 3300/3639
+19:17:35 detail 3400/3639
+19:18:10 detail 3500/3639
+19:18:45 detail 3600/3639
+19:19:04 detail done 3639
+19:19:04 opening prices: 0 missing
+19:19:04 price ticks BTC/USDC from=1788461105 to=1788461105 (0.0h)
+19:19:04 price ticks BTC/USDC: 0 rows
+19:19:04 price ticks ETH/USDC from=1788026340 to=1788461105 (120.8h)
+19:19:34   ETH/USDC pages=50 lastTs=1788077777
+19:20:02   ETH/USDC pages=100 lastTs=1788129531
+19:20:25   ETH/USDC pages=150 lastTs=1788181226
+19:20:48   ETH/USDC pages=200 lastTs=1788232997
+19:21:11   ETH/USDC pages=250 lastTs=1788284957
+19:21:33   ETH/USDC pages=300 lastTs=1788336832
+19:21:56   ETH/USDC pages=350 lastTs=1788388826
+19:22:18   ETH/USDC pages=400 lastTs=1788440551
+19:22:27 price ticks ETH/USDC: 419627 rows
+19:22:27 features for 3920 markets; calibration cells 354
+19:22:27 totals [Object: null prototype] {
+  markets: 3920,
+  fills: 4729,
+  orders: 1192383,
+  ticks: 483729
+}

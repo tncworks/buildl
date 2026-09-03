@@ -1,5 +1,5 @@
 import { moveBps } from "@calibrate/shared";
-import type { Decision, DecisionContext, TemplateId, TemplateSpec } from "./types.js";
+import type { Decision, DecisionContext, TemplateId, TemplateSpec } from "./types";
 
 /** Shared parameters every taker template exposes. */
 const TAKER_COMMON = [

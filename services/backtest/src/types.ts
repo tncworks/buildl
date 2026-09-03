@@ -54,7 +54,8 @@ export type SkipReason =
   | "no-signal"
   | "no-calibration"
   | "price-cap"
-  | "size-zero";
+  | "size-zero"
+  | "no-book";
 
 export interface WindowResult {
   marketId: string;
@@ -96,6 +97,8 @@ export interface RunRequest {
   intervalSec: number;
   template: TemplateId;
   params: Record<string, number>;
+  /** "print" (default): last printed price + slippage. "book": best quote reconstructed from order history at T + slippage (approximate). */
+  fillModel?: "print" | "book";
   from?: number;
   to?: number;
 }
