@@ -5,3 +5,6 @@ data/*.sqlite*
 dist/
 *.log.tmp
 apps/web/tsconfig.tsbuildinfo
+**/*.sqlite
+**/*.sqlite-shm
+**/*.sqlite-wal
