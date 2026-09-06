@@ -1,6 +1,6 @@
 # Calibrate — Execution Plan
 
-Status: executed 2026-09-04. Step records with verification output are in `docs/steps/`; see `docs/README.md` for the gate table. Steps 6 and the live-fire half of 7 wait on STT gas for the burner `0x889AD6CC21b22586E144ac1bc8CfFb088C34Fe3F`.
+Status: executed 2026-09-04. Step records with verification output are in `docs/steps/`; see `docs/README.md` for the gate table. Steps 6 and the live-fire half of 7 wait on STT gas for the burner `0x170Db821a50Da791b964940b134864EEece5Da7B`.
 Written: 2026-09-03. Every fact below is tagged with how it was verified. Nothing is assumed from docs alone.
 
 Verification evidence lives in `docs/verification/*.log` (raw outputs) and `scripts/verify/*.mjs` (the scripts that produced them, rerunnable with `node`). SDK references are to `@somnia-chain/markets-sdk@0.28.1` files under `node_modules/@somnia-chain/markets-sdk/dist/`.

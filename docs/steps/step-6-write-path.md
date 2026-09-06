@@ -4,13 +4,15 @@ Status: waiting on STT gas. Everything below is prepared; nothing has been sent 
 
 ## Burner
 
-A testnet burner key was generated with `viem/accounts.generatePrivateKey` on 2026-09-04 and written to `build/.env` as `PRIVATE_KEY` (gitignored). Its address is in `docs/verification/burner-address.txt`:
+The testnet burner address is in `docs/verification/burner-address.txt`:
 
 ```
-0x889AD6CC21b22586E144ac1bc8CfFb088C34Fe3F
+0x170Db821a50Da791b964940b134864EEece5Da7B
 ```
 
-To unblock this step, post that address in the faucet topic of the SomniaHacks dev group (https://t.me/+XHq0F0JXMyhmMzM0) and wait for STT to arrive. `curl "http://localhost:3210/api/wallet?address=0x889AD6CC21b22586E144ac1bc8CfFb088C34Fe3F"` shows the balance.
+2026-09-07: the burner was regenerated. The original (`0x889AD6CC21b22586E144ac1bc8CfFb088C34Fe3F`, generated with `viem/accounts.generatePrivateKey` on 2026-09-04) is retired because its faucet request was queued but never delivered. The key in `build/.env` (`PRIVATE_KEY`, gitignored) must be the one that derives to the address above before any script below is run.
+
+To unblock this step, post that address in the faucet topic of the SomniaHacks dev group (https://t.me/+XHq0F0JXMyhmMzM0) and wait for STT to arrive. `curl "http://localhost:3210/api/wallet?address=0x170Db821a50Da791b964940b134864EEece5Da7B"` shows the balance.
 
 ## Scripts (in order)
 
